@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Menu =()=> {
     return(
-
         <div>
         <title>Election System</title>
-
         <div className='Menu'>
              <div >
                 <h1>Election DAPP</h1>

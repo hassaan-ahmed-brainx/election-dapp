@@ -1,36 +1,36 @@
-import Web3 from "web3";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import ContractAbi from '../abi.json';
+import * as Constants from  '/home/brainx/Desktop/dapp/src/constants/constants.js'
 
-const Addcandiate =(candidates_data)=> {
 
-    let [Address_candidate, setAddress_candidate] = useState(localStorage.getItem('candidate_address') || '');
-    let [Address_candidate1, setAddress_candidate1] = useState(localStorage.getItem('candidate_name') || '');
+const Addcandiate =(candidatesData)=> {
 
-    let { handleAddCandidate } = candidates_data;
+    let [addressCandidate, setAddressCandidate] = useState(localStorage.getItem('candidate_address') || '');
+    let [addressCandidate1, setAddressCandidate1] = useState(localStorage.getItem('candidate_name') || '');
+
+    let { handleAddCandidate } = candidatesData;
     let myContract;
-    let provider = window.ethereum;
-	let ContractAddress = '0x943919392a07A8e68BDDb226DcFE694A67c2DDFa';
-    let web3 = new Web3(provider);
+	const ContractAddress = Constants.ContractAddress
+    const web3 = Constants.web3;
 	myContract = new web3.eth.Contract(ContractAbi, ContractAddress);
 
 
 
-    let handleChange1 = event => {
-        setAddress_candidate(event.target.value);
+    const handleChange1 = event => {
+        setAddressCandidate(event.target.value);
     }
 
-    let handleChange2 = event => {
-        setAddress_candidate1(event.target.value);
+    const handleChange2 = event => {
+        setAddressCandidate1(event.target.value);
     }
 
     let HandleAddCandidate = async () => {
-        await myContract.methods.addCandidate(Address_candidate, Address_candidate1).send({ from: window.ethereum.selectedAddress });
-        let newcandidate = { address: Address_candidate, name: Address_candidate1, votecount:0 };
+        await myContract.methods.addCandidate(addressCandidate, addressCandidate1).send({ from: window.ethereum.selectedAddress });
+        let newcandidate = { address: addressCandidate, name: addressCandidate1, votecount:0 };
         handleAddCandidate(newcandidate);
-        setAddress_candidate("");
-        setAddress_candidate1("");
+        setAddressCandidate("");
+        setAddressCandidate1("");
     }
 
     return(
@@ -47,7 +47,7 @@ const Addcandiate =(candidates_data)=> {
                     className='candidateaddress'
                     required
                     onChange={handleChange1}
-                    value={Address_candidate}
+                    value={addressCandidate}
                 />
             </div>  
 
@@ -61,7 +61,7 @@ const Addcandiate =(candidates_data)=> {
                     className='candidate-input'
                     required
                     onChange={handleChange2}
-                    value={Address_candidate1}
+                    value={addressCandidate1}
                 />
             </div>
             <button onClick={HandleAddCandidate}>Submit</button>         

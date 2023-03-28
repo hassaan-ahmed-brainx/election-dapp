@@ -1,21 +1,20 @@
-import Web3 from "web3";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import ContractAbi from '../abi.json'
+import * as Constants from  '/home/brainx/Desktop/dapp/src/constants/constants.js'
 
 
 
-const Castavote =(candidates_list)=> {
-    let {candidates} = candidates_list;
+const Castavote =(candidatesData)=> {
+    let {candidates} = candidatesData;
 
     let [selectedCandidate, setSelectedCandidate] = useState('');
     let [voteCount, setVoteCount] = useState(0);
 
     let myContract;
-    let provider = window.ethereum;
-    let ContractAddress = '0xf873BAfd52D35d78dbA73C3d54f1bDDa2f3660b3';
-    let web3 = new Web3(provider);
-    myContract = new web3.eth.Contract(ContractAbi, ContractAddress);
+	const ContractAddress = Constants.ContractAddress
+    const web3 = Constants.web3;
+	myContract = new web3.eth.Contract(ContractAbi, ContractAddress);
 
     const handleVote = async () => {
         try {
@@ -30,7 +29,7 @@ const Castavote =(candidates_list)=> {
           updatedCandidates[candidateIndex].votecount++;
           setSelectedCandidate('');
           setVoteCount(updatedCandidates[candidateIndex].votecount);
-          candidates_list.setCandidates(updatedCandidates);
+          candidatesData.setCandidates(updatedCandidates);
         } catch (error) {
           console.log(error);
         }
