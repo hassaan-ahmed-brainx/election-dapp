@@ -11,9 +11,9 @@ const Addcandiate =(candidatesData)=> {
 
     let { handleAddCandidate } = candidatesData;
     let myContract;
-	const ContractAddress = Constants.ContractAddress
+	const contractAddress = Constants.contractAddress
     const web3 = Constants.web3;
-	myContract = new web3.eth.Contract(ContractAbi, ContractAddress);
+	myContract = new web3.eth.Contract(ContractAbi, contractAddress);
 
 
 
@@ -64,7 +64,7 @@ const Addcandiate =(candidatesData)=> {
                     value={addressCandidate1}
                 />
             </div>
-            <button onClick={HandleAddCandidate1}>Submit</button>         
+            <button onClick={handleAddCandidate1}>Submit</button>         
         </div>
     );
 }

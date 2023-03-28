@@ -12,9 +12,9 @@ const Castavote =(candidatesData)=> {
     let [voteCount, setVoteCount] = useState(0);
 
     let myContract;
-	const ContractAddress = Constants.ContractAddress
+	const contractAddress = Constants.contractAddress
     const web3 = Constants.web3;
-	myContract = new web3.eth.Contract(ContractAbi, ContractAddress);
+	myContract = new web3.eth.Contract(ContractAbi, contractAddress);
 
     const handleVote = async () => {
         try {
