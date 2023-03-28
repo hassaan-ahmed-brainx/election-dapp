@@ -25,7 +25,7 @@ const Addcandiate =(candidatesData)=> {
         setAddressCandidate1(event.target.value);
     }
 
-    let HandleAddCandidate = async () => {
+    let handleAddCandidate1 = async () => {
         await myContract.methods.addCandidate(addressCandidate, addressCandidate1).send({ from: window.ethereum.selectedAddress });
         let newcandidate = { address: addressCandidate, name: addressCandidate1, votecount:0 };
         handleAddCandidate(newcandidate);
@@ -64,7 +64,7 @@ const Addcandiate =(candidatesData)=> {
                     value={addressCandidate1}
                 />
             </div>
-            <button onClick={HandleAddCandidate}>Submit</button>         
+            <button onClick={HandleAddCandidate1}>Submit</button>         
         </div>
     );
 }
