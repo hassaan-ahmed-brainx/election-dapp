@@ -1,23 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
+struct Candidate {
+    uint id;
+    string name;
+    uint VoteCount;
+}
 
 contract Election {
     //State Variables
     uint public candidatesCount;
     address public owner;
-    uint test;
 
     //Mappings
     mapping(uint => Candidate) public candidates;
     mapping(address => uint) public _candidates;
     mapping(address => bool) public voters;
-
-    //Struct
-    struct Candidate {
-        uint id;
-        string name;
-        uint VoteCount;
-    }
 
     // voted event
     event votedEvent(uint indexed _candidateId);
@@ -36,6 +33,10 @@ contract Election {
         owner = msg.sender;
     }
 
+    function candidateCount() public view returns (uint256) {
+        return candidatesCount;
+    }
+
     //Add a new candidate
     function addCandidate(
         address _candidate,
@@ -49,7 +50,9 @@ contract Election {
     }
 
     //Cast a vote to a valid candidate
-    function castVote(uint candidateId) public {
+    function castVote(address candidateIds) public {
+        uint candidateId = _candidates[candidateIds];
+
         require(_candidates[msg.sender] == 0, "Candidate Can not vote");
         require(!voters[msg.sender]);
         require(
