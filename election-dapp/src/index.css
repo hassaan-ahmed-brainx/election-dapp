@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+.Menu{
+    text-align: center;
+    
+    }
+    .addcandidate
+    {
+        margin-right: 10px;
+    }
+    
+    .submitbutton{
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    
+    .candidatename{
+        margin-right: 12px;
+    }
+    
+    .candidateaddress{
+        padding: 5px;
+    }
+    
+    .menu-link{
+        position: absolute; right: 5px; top: 20px;
+    }
+    
+    
+    .candidate-div
+    {
+        margin-top: 10px;
+    }
+    
+    .candidate-input
+    {
+        padding: 5px
+    }
+    
+    .table-header
+    {
+    margin-left: 40%;
+    }
+    
+    .address-candidate
+    {
+        padding-left: 100%;
+    }
