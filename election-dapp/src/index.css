@@ -1,50 +1,43 @@
+.Menu {
+  text-align: center;
+}
+.AddCandidate {
+  margin-right: 10px;
+}
 
+.SubmitButton {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
 
-.Menu{
-    text-align: center;
-    
-    }
-    .addcandidate
-    {
-        margin-right: 10px;
-    }
-    
-    .submitbutton{
-        padding: 10px;
-        border: 2px solid black;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
-    
-    .candidatename{
-        margin-right: 12px;
-    }
-    
-    .candidateaddress{
-        padding: 5px;
-    }
-    
-    .menu-link{
-        position: absolute; right: 5px; top: 20px;
-    }
-    
-    
-    .candidate-div
-    {
-        margin-top: 10px;
-    }
-    
-    .candidate-input
-    {
-        padding: 5px
-    }
-    
-    .table-header
-    {
-    margin-left: 40%;
-    }
-    
-    .address-candidate
-    {
-        padding-left: 100%;
-    }
+.CandidateName {
+  margin-right: 12px;
+}
+
+.CandidateAddress {
+  padding: 5px;
+}
+
+.MenuLink {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+}
+
+.CandidateDiv {
+  margin-top: 10px;
+}
+
+.CandidateInput {
+  padding: 5px;
+}
+
+.TableHeader {
+  margin-left: 40%;
+}
+
+.AddressCandidate {
+  padding-left: 100%;
+}
