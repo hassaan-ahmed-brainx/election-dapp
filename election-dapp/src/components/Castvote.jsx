@@ -35,17 +35,17 @@ const Castavote = ({ candidatesData }) => {
   return (
     <div className="Menu">
       <h1>Cast your vote</h1>
-      <Link className="MenuLink" to="/">
+      <Link className="Menu_Link" to="/">
         {" "}
         Main menu
       </Link>
-      <h1 className="TextCenter">Election Results</h1>
+      <h1 className="Text_Center">Election Results</h1>
       <hr />
 
       <div>
-        <table className="TableHeader">
+        <table className="Table_Header">
           <th>Name </th>
-          <th className="AddressCandidate">Address</th>
+          <th className="Address_Candidate">Address</th>
         </table>
         <ul>
           {candidates?.map((candidate) => (
