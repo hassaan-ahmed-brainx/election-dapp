@@ -1,0 +1,43 @@
+.Menu {
+  text-align: center;
+}
+.Add_Candidate {
+  margin-right: 10px;
+}
+
+.Submit_Button {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.Candidate_Name {
+  margin-right: 12px;
+}
+
+.Candidate_Address {
+  padding: 5px;
+}
+
+.Menu_Link {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+}
+
+.Candidate_Div {
+  margin-top: 10px;
+}
+
+.Candidate_Input {
+  padding: 5px;
+}
+
+.Table_Header {
+  margin-left: 40%;
+}
+
+.Address_Candidate {
+  padding-left: 100%;
+}
